@@ -1,9 +1,12 @@
 <?php
 
-$servername = "localhost";
-$username = "carlos";
-$password = "carlos123,";
-$dbname = "myDB";
+function ConsultaTercero(){
+
+    require_once 'Conexion.php';
+
+    require_once 'Desconectar.php';
+
+}
 
 
 ?>
