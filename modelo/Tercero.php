@@ -2,8 +2,8 @@
 
 function ConsultaTercero(){
 
-    require_once 'Conexion.php';
-
+    require 'Conectar.php';
+    $Consulta=$Conexion->query("select * from tercero ");
     require_once 'Desconectar.php';
 
 }
