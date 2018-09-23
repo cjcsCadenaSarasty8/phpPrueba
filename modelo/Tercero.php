@@ -1,11 +1,15 @@
 <?php
 
-function ConsultaTercero(){
-
-    require 'Conectar.php';
+function ConsultaListaTercero(){
+    include 'modelo/Conexion.php';
     $Consulta=$Conexion->query("select * from tercero ");
-    require_once 'Desconectar.php';
+    return $Consulta;
+}
 
+function ConsultaTercero($IdTercero){
+    include 'modelo/Conexion.php';
+    $Consulta=$Conexion->query("select * from tercero where Id=".$IdTercero);
+    return $Consulta;
 }
 
 

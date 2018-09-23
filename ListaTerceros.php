@@ -1,7 +1,11 @@
 <?php include 'Header.html';?>
 <div class=container>
+
     <h1>Lista Terceros</h1>
-    <hr>
+    <div class="row">
+        <div class="col-lg">
+        </div>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -15,12 +19,8 @@
         <tbody>
     <?php 
         try{
-            $DBServidor = "localhost";
-            $DBusuario = "root";
-            $DBclave = "123456789";
-            $DBNombre = "phpprueba";
-            $Conexion=new PDO("mysql:host=localhost;dbname=phpprueba",$DBusuario,$DBclave);
-            $Consulta=$Conexion->query("select * from tercero");
+            include 'modelo/Tercero.php';
+            $Consulta=ConsultaListaTercero();
             $Tabla=array();
             foreach ($Consulta as $Fila) {
                 echo "<tr>"
