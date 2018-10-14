@@ -1,12 +1,17 @@
-<?php include 'Header.html';?>
+<?php 
 
-<?php include 'Constante/TipoDocumento.php';?>
+include 'Header.html';
+
+
+?>
 <?php 
     $Id=0;
     $TipoIdentificacion="";
     $Identificacion="";
     $Nombre="";
     $Apellido="";
+    $Departamento="";
+    $Municipio="";
     $Direccion="";
     $Barrio="";
     $Telefono="";
@@ -24,6 +29,8 @@
             $Identificacion=$Fila["Identificacion"];
             $Nombre=$Fila["Nombre"];
             $Apellido=$Fila["Apellido"];
+            $Departamento=$Fila["Apellido"];
+            $Municipio="";
             // $Direccion=$Fila["Direccion"];
             $Barrio=$Fila["Barrio"];
             $Telefono=$Fila["Telefono"];
@@ -47,9 +54,16 @@
                     <select id="CampoTipoIdentificacion" class="form-control" value="<?php echo $TipoIdentificacion; ?>">
                         <option value="" >Seleccione una opción</option>
                         <?php
-                        foreach ($ListaTipoDocumento as $Tipo) {
-                            echo "<option value=$Tipo>".ObtenerDescripcion($Tipo)."</option>";
-                        }
+                            require_once 'Constante/TipoDocumento.php';
+                            foreach($ListaTipoDocumento as $Tipo){
+                                $Retorno="";
+                                $Retorno="<option value=$Tipo";
+                                if($TipoIdentificacion==$Tipo){
+                                    $Retorno=$Retorno." selected";
+                                }
+                                $Retorno=$Retorno.">$ListaTipoDocumentoDescripcion[$Tipo]</option>";
+                                echo $Retorno;
+                            }
                         ?>
                     </select>
                 </div>
@@ -86,6 +100,36 @@
                 <div class="form-group">
                     <label for="CampoBarrio">Barrio:</label>
                     <input id="CampoBarrio" type="text" class="form-control" value="<?php echo $Barrio; ?>">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg">
+                <div class="form-group">
+                    <label for="CampoDepartamento">Departamento:</label>
+                    <!-- <input id="CampoDepartamento" type="text" class="form-control" value="<?php echo $Direccion; ?>"> -->
+                    <select id="CampoDepartamento" class="form-control" value="<?php echo $TipoIdentificacion; ?>">
+                        <option value="" >Seleccione una opción</option>
+                        <?php
+                            require 'modelo/Municipio.php';
+                            $Lista=ConsultaListaDepartamento();
+                            foreach($Lista as $Tipo){
+                                $Retorno="";
+                                $Retorno="<option value=$Tipo";
+                                if($TipoIdentificacion==$Tipo){
+                                    $Retorno=$Retorno." selected";
+                                }
+                                $Retorno=$Retorno.">$ListaTipoDocumentoDescripcion[$Tipo]</option>";
+                                echo $Retorno;
+                            }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="form-group">
+                    <label for="CampoMunicipio">Municipio:</label>
+                    <input id="CampoMunicipio" type="text" class="form-control" value="<?php echo $Barrio; ?>">
                 </div>
             </div>
         </div>

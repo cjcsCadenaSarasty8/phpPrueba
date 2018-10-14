@@ -11,11 +11,13 @@
     $Des_TarjetaIdentidad="Tarjeta de Identidad";
 
     $ListaTipoDocumento=array($Cedula,$Nit,$RegistroCivil,$TarjetaIdentidad);
+    $ListaTipoDocumentoDescripcion=array($Cedula=>$Des_Cedula,$Nit=>$Des_Nit,$RegistroCivil=>$Des_RegistroCivil,$TarjetaIdentidad=>$Des_TarjetaIdentidad);
 
     function ObtenerDescripcion($TipoDocumento){
         $Retorno="";
         switch($TipoDocumento){
             case $Cedula:
+            echo $Cedula;
             $Retorno=$Des_Cedula;
             break;
             case $Nit:
@@ -26,6 +28,8 @@
             break;
             case $TarjetaIdentidad:
             $Retorno=$Des_TarjetaIdentidad;
+            break;
+            default:
             break;
         }
         return $Retorno;
