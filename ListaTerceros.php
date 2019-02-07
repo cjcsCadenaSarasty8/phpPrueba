@@ -1,11 +1,9 @@
 <?php include 'Header.html';?>
 <div class=container>
-
+    
     <h1>Lista Terceros</h1>
-    <div class="row">
-        <div class="col-lg">
-        </div>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+    </nav>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -13,6 +11,7 @@
                 <th scope="col">Identificación</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
+                <th scope="col">Estado</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
@@ -28,6 +27,7 @@
                     ."<td>$Fila[Identificacion]</td>"
                     ."<td>$Fila[Nombre]</td>"
                     ."<td>$Fila[Apellido]</td>"
+                    ."<td>$Fila[Estado]</td>"
                     ."<td><div class='btn-group' role='group'>"
                     ."<button id='btnGroupDrop1' type='button' align='right' class='btn btn-secondary dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' >"
                     ."Opciones"

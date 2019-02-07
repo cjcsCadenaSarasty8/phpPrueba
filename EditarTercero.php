@@ -31,7 +31,6 @@ include 'Header.html';
             $Apellido=$Fila["Apellido"];
             $Departamento=$Fila["Apellido"];
             $Municipio="";
-            // $Direccion=$Fila["Direccion"];
             $Barrio=$Fila["Barrio"];
             $Telefono=$Fila["Telefono"];
             $Celular=$Fila["Celular"];
@@ -50,7 +49,6 @@ include 'Header.html';
             <div class="col-lg">
                 <div class="form-group">
                     <label for="CampoTipoIdentificacion">Tipo Identificación:</label>
-                    <!-- <input id="CampoTipoIdentificacion" type="text" class="form-control" value="<?php echo $TipoIdentificacion; ?>"> -->
                     <select id="CampoTipoIdentificacion" class="form-control" value="<?php echo $TipoIdentificacion; ?>">
                         <option value="" >Seleccione una opción</option>
                         <?php
